@@ -11,7 +11,7 @@
             if (address && address !== null) {
                 weatherText.innerHTML = 'Loading...';
                 errorText.innerHTML = '';
-                fetch('http://localhost:8000/weather?address=' + address).then(res => res.json()).then(res => {
+                fetch('/weather?address=' + address).then(res => res.json()).then(res => {
                     if (res.error) {
                         errorText.innerHTML = res.error;
                         weatherText.innerHTML = '';
