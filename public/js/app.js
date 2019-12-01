@@ -16,7 +16,9 @@
                         errorText.innerHTML = res.error;
                         weatherText.innerHTML = '';
                     } else {
-                        weatherText.innerHTML = 'Temperature: ' + res.temperature + ', Rain probability: ' + res.precipProbability + ', Place: ' + res.placeName; 
+                        const { humidity, precipProbability, windSpeed, windGust } = res.currently;
+                        weatherText.innerHTML = 'Temperature: ' + res.temperature + ', Rain probability: ' + precipProbability + ', Place: ' + res.placeName
+                            + ', Humidity: ' + humidity + ', Wind speed: ' + windSpeed + ', Wind gust: ' + windGust; 
                         errorText.innerHTML = '';
                     }
                 });
